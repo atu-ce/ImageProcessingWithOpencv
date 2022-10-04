@@ -1,0 +1,14 @@
+OpenCV tarafından yüklenen renkli görüntü BGR formatındadır. Ancak Matplotlib, RGB formatında görüntülenir. Dolayısıyla, görüntü OpenCV ile okunduğunda renkli görüntüler Matplotlib'de doğru görüntülenmeyecektir.
+
+b,g,r = cv2.split(image) # Resmi renklerine ayırır.
+
+image2 = cv2.merge((b,g,r)) # Renkleri birleştirir.
+
+img.shape # Resmin boyutunu belirtir.
+
+cv2.bitwise_not(img) # Resmin renk değerlerinin tersini alır.
+
+cv2.bitwise_and(roi, roi, mask=img) # Resimlerin renk değerlerini çarpar.
+
+ret, mask = cv2.threshold(img2_gray,10,250,cv2.THRESH_BINARY) # img2_gray resimdeki 10'dan küçük olan değerleri 0'a, büyük olan değerleri 250'ye dönüştürür.
+
